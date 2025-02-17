@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             LabelTitreJeu = new Label();
             LabelGenreJeu = new Label();
             LabelAnnéeJeu = new Label();
             LabelPrixJeu = new Label();
             LabelStatutJeu = new Label();
             groupBox1 = new GroupBox();
+            btnDebug = new Button();
             ComboBoxPlateforme = new ComboBox();
             LabelPlateforme = new Label();
             ComboBoxAnnee = new ComboBox();
@@ -44,6 +46,9 @@
             textBoxPrixJeu = new TextBox();
             textBoxTitreJeu = new TextBox();
             dataGridView1 = new DataGridView();
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            toolTip1 = new ToolTip(components);
+            label1 = new Label();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -87,7 +92,7 @@
             // LabelStatutJeu
             // 
             LabelStatutJeu.AutoSize = true;
-            LabelStatutJeu.Location = new Point(41, 236);
+            LabelStatutJeu.Location = new Point(41, 237);
             LabelStatutJeu.Name = "LabelStatutJeu";
             LabelStatutJeu.Size = new Size(58, 25);
             LabelStatutJeu.TabIndex = 4;
@@ -95,6 +100,8 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(btnDebug);
             groupBox1.Controls.Add(ComboBoxPlateforme);
             groupBox1.Controls.Add(LabelPlateforme);
             groupBox1.Controls.Add(ComboBoxAnnee);
@@ -116,13 +123,25 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "groupBox1";
             // 
+            // btnDebug
+            // 
+            btnDebug.Location = new Point(279, 433);
+            btnDebug.Margin = new Padding(4, 5, 4, 5);
+            btnDebug.Name = "btnDebug";
+            btnDebug.Size = new Size(107, 38);
+            btnDebug.TabIndex = 17;
+            btnDebug.Text = "Bouton Debug";
+            btnDebug.UseVisualStyleBackColor = true;
+            btnDebug.Visible = false;
+            btnDebug.Click += btnDebug_Click;
+            // 
             // ComboBoxPlateforme
             // 
             ComboBoxPlateforme.FormattingEnabled = true;
             ComboBoxPlateforme.Items.AddRange(new object[] { "GameBoy", "GameBoy Advenced", "DS", "3DS", "Switch", "Switch 2", "PS1", "PS2", "PS3", "PS4", "PS5", "XBox", "XBox360", "XBox One", "Autre" });
-            ComboBoxPlateforme.Location = new Point(185, 82);
+            ComboBoxPlateforme.Location = new Point(186, 82);
             ComboBoxPlateforme.Name = "ComboBoxPlateforme";
-            ComboBoxPlateforme.Size = new Size(329, 33);
+            ComboBoxPlateforme.Size = new Size(330, 33);
             ComboBoxPlateforme.TabIndex = 15;
             // 
             // LabelPlateforme
@@ -138,34 +157,34 @@
             // 
             ComboBoxAnnee.FormattingEnabled = true;
             ComboBoxAnnee.Items.AddRange(new object[] { "Inconnu", "2035", "2034", "2033", "2032", "2031", "2030", "2029", "2028", "2027", "2026", "2025", "2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", "1994", "1993", "1992", "1991", "1990", "1989", "1988", "1987", "1986", "1985", "1984", "1983", "1982", "1981", "1980", "1979", "1978", "1977", "1976", "1975", "1974", "1973", "1972", "1971", "1970", "1969", "1968", "1967", "1966", "1965", "1964", "1963", "1962", "1961", "1960", "1959", "1958", "1957", "1956", "1955", "1954", "1953", "1952", "1951", "1950" });
-            ComboBoxAnnee.Location = new Point(185, 159);
+            ComboBoxAnnee.Location = new Point(186, 158);
             ComboBoxAnnee.Name = "ComboBoxAnnee";
-            ComboBoxAnnee.Size = new Size(329, 33);
+            ComboBoxAnnee.Size = new Size(330, 33);
             ComboBoxAnnee.TabIndex = 13;
             // 
             // ComboBoxStatut
             // 
             ComboBoxStatut.FormattingEnabled = true;
             ComboBoxStatut.Items.AddRange(new object[] { "Disponible", "Prêté", "Vendu" });
-            ComboBoxStatut.Location = new Point(185, 236);
+            ComboBoxStatut.Location = new Point(186, 237);
             ComboBoxStatut.Name = "ComboBoxStatut";
-            ComboBoxStatut.Size = new Size(329, 33);
+            ComboBoxStatut.Size = new Size(330, 33);
             ComboBoxStatut.TabIndex = 12;
             // 
             // ComboBoxGenreJeu
             // 
             ComboBoxGenreJeu.FormattingEnabled = true;
             ComboBoxGenreJeu.Items.AddRange(new object[] { "Action", "RPG", "Sport", "Combat", "Autre", "Inconnu" });
-            ComboBoxGenreJeu.Location = new Point(185, 121);
+            ComboBoxGenreJeu.Location = new Point(186, 122);
             ComboBoxGenreJeu.Name = "ComboBoxGenreJeu";
-            ComboBoxGenreJeu.Size = new Size(329, 33);
+            ComboBoxGenreJeu.Size = new Size(330, 33);
             ComboBoxGenreJeu.TabIndex = 6;
             // 
             // btnSupprJeu
             // 
-            btnSupprJeu.Location = new Point(36, 342);
+            btnSupprJeu.Location = new Point(37, 360);
             btnSupprJeu.Name = "btnSupprJeu";
-            btnSupprJeu.Size = new Size(478, 34);
+            btnSupprJeu.Size = new Size(440, 38);
             btnSupprJeu.TabIndex = 11;
             btnSupprJeu.Text = "Supprimer un jeu";
             btnSupprJeu.UseVisualStyleBackColor = true;
@@ -175,7 +194,7 @@
             // 
             btnAjoutJeu.Location = new Point(36, 273);
             btnAjoutJeu.Name = "btnAjoutJeu";
-            btnAjoutJeu.Size = new Size(478, 34);
+            btnAjoutJeu.Size = new Size(479, 33);
             btnAjoutJeu.TabIndex = 6;
             btnAjoutJeu.Text = "Ajouter à la Collection";
             btnAjoutJeu.UseVisualStyleBackColor = true;
@@ -183,33 +202,50 @@
             // 
             // textBoxPrixJeu
             // 
-            textBoxPrixJeu.Location = new Point(185, 198);
+            textBoxPrixJeu.Location = new Point(186, 198);
             textBoxPrixJeu.Name = "textBoxPrixJeu";
-            textBoxPrixJeu.Size = new Size(329, 31);
+            textBoxPrixJeu.Size = new Size(330, 31);
             textBoxPrixJeu.TabIndex = 8;
             // 
             // textBoxTitreJeu
             // 
-            textBoxTitreJeu.Location = new Point(185, 45);
+            textBoxTitreJeu.Location = new Point(186, 45);
             textBoxTitreJeu.Name = "textBoxTitreJeu";
-            textBoxTitreJeu.Size = new Size(329, 31);
+            textBoxTitreJeu.Size = new Size(330, 31);
             textBoxTitreJeu.TabIndex = 6;
             textBoxTitreJeu.TextChanged += textBox1_TextChanged;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(682, 53);
+            dataGridView1.Location = new Point(681, 53);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(1046, 514);
+            dataGridView1.Size = new Size(1046, 513);
             dataGridView1.TabIndex = 6;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.ImageScalingSize = new Size(24, 24);
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(61, 4);
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(483, 367);
+            label1.Name = "label1";
+            label1.Size = new Size(20, 25);
+            label1.TabIndex = 18;
+            label1.Text = "?";
+            toolTip1.SetToolTip(label1, "Supprimera la dernière ligne cliqué dans le tableau");
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1799, 604);
+            ClientSize = new Size(1799, 603);
             Controls.Add(dataGridView1);
             Controls.Add(groupBox1);
             Name = "Form1";
@@ -240,5 +276,9 @@
         private ComboBox ComboBoxAnnee;
         private ComboBox ComboBoxPlateforme;
         private DataGridView dataGridView1;
+        private ContextMenuStrip contextMenuStrip1;
+        private Button btnDebug;
+        private ToolTip toolTip1;
+        private Label label1;
     }
 }
